@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>RandomDataGenerator.Gui</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\RandomDataGenerator.Gui\**\*.cs" />
+    <!-- <Content Include="..\RandomDataGenerator.Gui\**\*.resx"  /> -->
+    <EmbeddedResource Include="..\RandomDataGenerator.Gui\**\*.settings" />
+    <EmbeddedResource Include="..\RandomDataGenerator.Gui\**\*.png" />
+    <EmbeddedResource Include="..\RandomDataGenerator.Gui\**\*.ico" />
+    <Content Remove="..\RandomDataGenerator.Gui\Bin\*.*" />
+    <Content Remove="..\RandomDataGenerator.Gui\Obj\*.*" />
+    <Compile Remove="..\RandomDataGenerator.Gui\Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="..\RandomDataGenerator.Gui\Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>..\RandomDataGenerator.Gui\Properties\Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="..\RandomDataGenerator.Gui\Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RandomDataGenerator\RandomDataGenerator.csproj" />
+  </ItemGroup>
+
+</Project>
